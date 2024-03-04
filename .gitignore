@@ -1,4 +1,6 @@
+# ETC
 !**/.gitkeep
+!nginx.tmpl
 .docker
 .vscode
 certs/
@@ -8,7 +10,6 @@ vhost.d/
 
 # tests
 go/
-nginx.tmpl
 pebble.minica.pem
 test/local_test_env.sh
 test/tests/docker_api/expected-std-out.txt
