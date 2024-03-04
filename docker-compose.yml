@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./data/certs:/etc/nginx/certs:ro
+      - ./data/certs:/etc/nginx/certs
       - ./data/conf.d:/etc/nginx/conf.d
       - ./data/html:/usr/share/nginx/html
       - ./data/vhost.d:/etc/nginx/vhost.d
@@ -35,11 +35,8 @@ services:
       - DEFAULT_EMAIL=lstephens@wpaintel.com
       # - ACME_CA_URI=https://acme-v02.api.letsencrypt.org/directory
       - ACME_CA_URI=https://acme-staging-v02.api.letsencrypt.org/directory
+    volumes_from:
+      - nginx-proxy
     volumes:
-      - ./data/acme:/etc/acme.sh
-      - ./data/certs:/etc/nginx/certs:ro
-      - ./data/conf.d:/etc/nginx/conf.d
-      - ./data/html:/usr/share/nginx/html
-      - ./data/vhost.d:/etc/nginx/vhost.d
       - /var/run/docker.sock:/var/run/docker.sock:ro
     network_mode: bridge
