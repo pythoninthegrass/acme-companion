@@ -32,7 +32,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=lstephens@wpaintel.com
+      - DEFAULT_EMAIL=username@acme.com
       # - ACME_CA_URI=https://acme-v02.api.letsencrypt.org/directory
       - ACME_CA_URI=https://acme-staging-v02.api.letsencrypt.org/directory
     volumes_from:
